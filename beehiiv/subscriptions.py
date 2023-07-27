@@ -1,5 +1,6 @@
 from beehiiv.endpoint import Endpoint
 
+
 class Subscriptions(Endpoint):
 
     def __init__(self, api_key, publicationId):
