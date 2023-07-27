@@ -28,10 +28,19 @@ class Subscriptions(Endpoint):
             method="POST",
         ).json()
 
-    def index(self):
+    def index(self, email=None, expand=[], limit=None, page=None, status=None,
+              tier=None):
         '''index'''
         return self._make_call(
             [self.publicationId],
+            params={
+                "email": email,
+                "expand[]": expand,
+                "limit": limit,
+                "page": page,
+                "status": status,
+                "tier": tier,
+            },
         ).json()
 
     def show(self, subscriptionId):
