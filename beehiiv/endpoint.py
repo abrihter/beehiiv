@@ -1,16 +1,23 @@
-import inspect
 import requests
+
 
 class Endpoint:
     api_uri = "https://api.beehiiv.com/v2"
     endpoint = None
 
     def __init__(self, api_key):
-        '''init'''
+        '''init
+
+        :param str api_key: BeeHiiv API KEY
+        '''
         self.api_key = api_key
 
     def _craft_url(self, endpoint, params):
-        '''make api url'''
+        '''make api url
+
+        :param str endpoint: Endpoint to format
+        :param list params: Parameters to insert in endpoint
+        '''
         return "{}{}".format(
             self.api_uri,
             endpoint.format(*params) if params else endpoint,
@@ -22,9 +29,16 @@ class Endpoint:
             "Authorization": "Bearer {}".format(self.api_key),
         }
 
-    def _make_call(self, endpoint_params, params=None, endpoint=None, data=None,
-                   method="GET"):
-        '''make call api'''
+    def _make_call(self, endpoint_params, params=None, endpoint=None,
+                   data=None, method="GET"):
+        '''make call api
+
+        :param list endpoint_params: Endpoint params list
+        :param dict params: Query params for request
+        :param str endpoint: Endpoint for request
+        :param dict data: Data for request
+        :param str method: Method for request
+        '''
         return requests.request(
             method,
             headers=self._create_call_headers(),
@@ -35,4 +49,3 @@ class Endpoint:
             data=data,
             params=params,
         )
-
