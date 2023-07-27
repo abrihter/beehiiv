@@ -22,8 +22,8 @@ class EmailBlasts(Endpoint):
     def show(self, emailBlastId, expand=[]):
         '''show'''
         return self._make_call(
-            endpoint=self.endpoint + "/{}"
             [self.publicationId, emailBlastId],
+            endpoint=self.endpoint + "/{}",
             params={
                 "expand[]": expand,
             },
@@ -32,8 +32,8 @@ class EmailBlasts(Endpoint):
     def update(self, subscriptionId, unsubscribe=None, custom_fields=[]):
         '''update'''
         return self._make_call(
-            endpoint=self.endpoint + "/{}"
             [self.publicationId, subscriptionId],
+            endpoint=self.endpoint + "/{}",
             data={
                 "unsubscribe": unsubscribe,
                 "custom_fields": custom_fields,
@@ -44,7 +44,7 @@ class EmailBlasts(Endpoint):
     def delete(self, subscriptionId):
         '''delete'''
         return self._make_call(
-            endpoint=self.endpoint + "/{}"
             [self.publicationId, subscriptionId],
+            endpoint=self.endpoint + "/{}",
             method="DELETE",
         ).json()
