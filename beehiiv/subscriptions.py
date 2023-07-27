@@ -46,8 +46,8 @@ class Subscriptions(Endpoint):
     def show(self, subscriptionId, expand=[]):
         '''show'''
         return self._make_call(
-            endpoint=self.endpoint + "/{}"
             [self.publicationId, subscriptionId],
+            endpoint=self.endpoint + "/{}",
             params={
                 "expand[]": expand,
             },
@@ -56,8 +56,8 @@ class Subscriptions(Endpoint):
     def update(self, subscriptionId, unsubscribe=None, custom_fields=[]):
         '''update'''
         return self._make_call(
-            endpoint=self.endpoint + "/{}"
             [self.publicationId, subscriptionId],
+            endpoint=self.endpoint + "/{}",
             data={
                 "unsubscribe": unsubscribe,
                 "custom_fields": custom_fields,
@@ -68,7 +68,7 @@ class Subscriptions(Endpoint):
     def delete(self, subscriptionId):
         '''delete'''
         return self._make_call(
-            endpoint=self.endpoint + "/{}"
             [self.publicationId, subscriptionId],
+            endpoint=self.endpoint + "/{}",
             method="DELETE",
         ).json()

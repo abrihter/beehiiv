@@ -23,23 +23,23 @@ class Segments(Endpoint):
     def show(self, segmentId):
         '''show'''
         return self._make_call(
-            endpoint=self.endpoint + "/{}"
             [self.publicationId, segmentId],
+            endpoint=self.endpoint + "/{}",
         ).json()
 
     def delete(self, segmentId):
         '''delete'''
         return self._make_call(
-            endpoint=self.endpoint + "/{}"
             [self.publicationId, segmentId],
+            endpoint=self.endpoint + "/{}",
             method="DELETE",
         ).json()
 
     def expand_results(self, segmentId, limit=None, page=None):
         '''expand results'''
         return self._make_call(
-            endpoint=self.endpoint + "/{}/results"
-            [self.publicationId],
+            [self.publicationId, segmentId],
+            endpoint=self.endpoint + "/{}/results",
             params={
                 "limit": limit,
                 "page": page,

@@ -22,15 +22,17 @@ class Endpoint:
             "Authorization": "Bearer {}".format(self.api_key),
         }
 
-    def _make_call(self, params, endpoint=None, data=None, method="GET"):
+    def _make_call(self, endpoint_params, params=None, endpoint=None, data=None,
+                   method="GET"):
         '''make call api'''
         return requests.request(
             method,
             headers=self._create_call_headers(),
             url=self._craft_url(
                 self.endpoint if not endpoint else endpoint,
-                params
+                endpoint_params
             ),
             data=data,
+            params=params,
         )
 

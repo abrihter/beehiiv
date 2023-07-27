@@ -1,7 +1,7 @@
 from beehiiv.endpoint import Endpoint
 
 
-class ReferralPProgram(Endpoint):
+class ReferralProgram(Endpoint):
 
     def __init__(self, api_key, publicationId):
         super().__init__(api_key)
@@ -11,7 +11,6 @@ class ReferralPProgram(Endpoint):
     def show(self, emailBlastId, limit=None, page=None):
         '''show'''
         return self._make_call(
-            endpoint=self.endpoint + "/{}"
             [self.publicationId, emailBlastId],
             params={
                 "limit": limit,

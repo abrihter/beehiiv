@@ -21,8 +21,8 @@ class Publications(Endpoint):
     def show(self, publicationId, expand=[]):
         '''show'''
         return self._make_call(
-            endpoint=self.endpoint + "/{}"
             [publicationId],
+            endpoint=self.endpoint + "/{}",
             params={
                 "expand[]": expand,
             },

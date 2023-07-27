@@ -27,8 +27,8 @@ class Posts(Endpoint):
     def show(self, postId, expand=[]):
         '''show'''
         return self._make_call(
-            endpoint=self.endpoint + "/{}"
             [self.publicationId, postId],
+            endpoint=self.endpoint + "/{}",
             params={
                 "expand[]": expand,
             },
@@ -37,7 +37,7 @@ class Posts(Endpoint):
     def destory(self, subscriptionId, postId):
         '''delete'''
         return self._make_call(
-            endpoint=self.endpoint + "/{}"
             [self.publicationId, subscriptionId],
+            endpoint=self.endpoint + "/{}",
             method="DELETE",
         ).json()
