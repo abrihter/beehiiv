@@ -15,6 +15,9 @@ class Segments(Endpoint):
 
     def index(self, limit=None, page=None, status=None, type=None):
         '''index
+        Retrieve information about all segments
+        belonging to a specific publication
+
         https://developers.beehiiv.com/docs/v2/c64e02cfe1026-index
 
         :param int limit: A limit on the number of objects to be returned. The limit can range between 1 and 100, and the default is 10.
@@ -40,6 +43,8 @@ class Segments(Endpoint):
 
     def show(self, segmentId):
         '''show
+        Retrieve a single segment belonging to a specific publication
+
         https://developers.beehiiv.com/docs/v2/8a20afd6a7570-show
 
         :param str segmentId: The prefixed ID of the segment object
@@ -51,6 +56,9 @@ class Segments(Endpoint):
 
     def delete(self, segmentId):
         '''delete
+        Delete a segment. Deleting the segment does not effect
+        the subscriptions in the segment.
+
         https://developers.beehiiv.com/docs/v2/620e1d108ef9a-delete
 
         :param str segmentId: The prefixed ID of the segment object
@@ -63,6 +71,9 @@ class Segments(Endpoint):
 
     def expand_results(self, segmentId, limit=None, page=None):
         '''expand results
+        List the Subscriber Ids from the most recent calculation
+        of a specific publication.
+
         https://developers.beehiiv.com/docs/v2/dbf5cd286f14b-expand-results
 
         :param str segmentId: The prefixed ID of the segment object

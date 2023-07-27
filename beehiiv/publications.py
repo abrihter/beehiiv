@@ -13,6 +13,8 @@ class Publications(Endpoint):
 
     def index(self, expand=[], limit=None, page=None):
         '''index
+        Retrieve all publications associated with your API key.
+
         https://developers.beehiiv.com/docs/v2/f2cc85aaf19cd-index
 
         :param list expand: Optional list of expandable objects.
@@ -34,6 +36,8 @@ class Publications(Endpoint):
 
     def show(self, publicationId, expand=[]):
         '''show
+        Retrieve a single publication
+
         https://developers.beehiiv.com/docs/v2/d664af2e46883-show
 
         :param str publicationId: The prefixed ID of the publication object

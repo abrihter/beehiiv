@@ -17,6 +17,8 @@ class Subscriptions(Endpoint):
                utm_source=None, utm_medium=None, utm_campaign=None,
                referring_site=None, referral_code=None, custom_fields=[]):
         '''create
+        Create new subscriptions for a publication.
+
         https://developers.beehiiv.com/docs/v2/1f82a0eaf9b68-create
 
         :param str email: The email address of the subscription.
@@ -49,6 +51,8 @@ class Subscriptions(Endpoint):
     def index(self, email=None, expand=[], limit=None, page=None, status=None,
               tier=None):
         '''index
+        Retrieve all subscriptions belonging to a specific publication
+
         https://developers.beehiiv.com/docs/v2/ac72589d509bc-index
 
         :param str email: Optional email address to find a subscription.
@@ -83,6 +87,8 @@ class Subscriptions(Endpoint):
 
     def show(self, subscriptionId, expand=[]):
         '''show
+        Retrieve a single subscription belonging to a specific publication
+
         https://developers.beehiiv.com/docs/v2/21a42d55e6aff-show
 
         :param str subscriptionId: The prefixed ID of the subscription object
@@ -102,6 +108,8 @@ class Subscriptions(Endpoint):
 
     def update(self, subscriptionId, unsubscribe=None, custom_fields=[]):
         '''update
+        Update a subscriber
+
         https://developers.beehiiv.com/docs/v2/6bb99290622e5-update
 
         :param str subscriptionId: The prefixed ID of the subscription object
@@ -126,6 +134,13 @@ class Subscriptions(Endpoint):
 
     def delete(self, subscriptionId):
         '''delete
+        Delete a subscription.
+        This cannot be undone All data associated with the subscription
+        will also be deleted. We recommend unsubscribing when possible
+        instead of deleting.
+
+        If a premium subscription is deleted they will no longer be billed.
+
         https://developers.beehiiv.com/docs/v2/5fa5aa2351d71-delete
 
         :param str subscriptionId: The prefixed ID of the subscription object

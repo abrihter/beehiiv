@@ -15,6 +15,9 @@ class ReferralProgram(Endpoint):
 
     def show(self, limit=None, page=None):
         '''show
+        Retrieve details about the publication's referral program,
+        including milestones and rewards.
+
         https://developers.beehiiv.com/docs/v2/f580beba61c93-show
 
         :param int limit: A limit on the number of objects to be returned. The limit can range between 1 and 100, and the default is 10.

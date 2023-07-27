@@ -16,6 +16,8 @@ class Posts(Endpoint):
     def index(self, audience=None, content_tags=[], expand=[], limit=None,
               page=None, platform=None, status=None):
         '''index
+        Retrieve all posts belonging to a specific publication
+
         https://developers.beehiiv.com/docs/v2/84b282584290d-index
 
         :param str audience: Optionally filter the results by audience
@@ -65,6 +67,8 @@ class Posts(Endpoint):
 
     def show(self, postId, expand=[]):
         '''show
+        Retreive a single Post belonging to a specific publication
+
         https://developers.beehiiv.com/docs/v2/ab0d2f8ee91c2-show
 
         :param str postId: The prefixed ID of the post object
@@ -87,6 +91,10 @@ class Posts(Endpoint):
 
     def destory(self, postId):
         '''delete
+        Delete or Archive a post. Any post that has been confirmed will have
+        it's status changed to archived. Posts in the draft status will be
+        permenantly deleted.
+
         https://developers.beehiiv.com/docs/v2/d82c22d939938-destroy
 
         :param str postId: The prefixed ID of the post object
