@@ -43,11 +43,14 @@ class Subscriptions(Endpoint):
             },
         ).json()
 
-    def show(self, subscriptionId):
+    def show(self, subscriptionId, expand=[]):
         '''show'''
         return self._make_call(
             endpoint=self.endpoint + "/{}"
             [self.publicationId, subscriptionId],
+            params={
+                "expand[]": expand,
+            },
         ).json()
 
     def update(self, subscriptionId, unsubscribe=None, custom_fields=[]):
