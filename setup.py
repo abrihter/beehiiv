@@ -18,7 +18,7 @@ setup(
     author_email='',
     description='Python wrapper for the BeeHiiv API',
     keywords=['BEEHIIV', 'API', 'WRAPPER'],
-    download_url='https://github.com/abrihter/beehiiv/archive/refs/tags/v0.1b.tar.gz',  # noqa E501
+    download_url='https://github.com/abrihter/beehiiv/archive/refs/tags/v0.2.tar.gz',  # noqa E501
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
