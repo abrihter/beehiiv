@@ -13,7 +13,7 @@ class Endpoint:
         '''make api url'''
         return "{}{}".format(
             self.api_uri,
-            endpoint.format(*params),
+            endpoint.format(*params) if params else endpoint,
         )
 
     def _create_call_headers(self):
